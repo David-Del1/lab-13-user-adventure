@@ -14,17 +14,19 @@ const body = document.querySelector('body');
 const audioTag = document.createElement('audio');
 const sourceTag = document.createElement('source');
 
+audioTag.autoplay = 'true';
 
-audioTag.append(sourceTag);
-body.append(audioTag);
 
 const questId = params.get('id');
 
 const quest = findById(quests, questId);
 
 sourceTag.src = `../assets/${quest.audio}`;
-
+console.log(sourceTag);
 //console.table(quest);
+
+audioTag.append(sourceTag);
+body.append(audioTag);
 
 const image = document.createElement('img');
 const h2 = document.createElement('h2');
