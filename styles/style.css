@@ -20,6 +20,80 @@ header div {
     margin-right: 2rem;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* User page CSS */
+
+.login {
+    height: 100%;
+    background-color: black;
+}
+
+.form-container {
+    height: 100%;
+    width: 100%;
+    background-image: url(../assets/lotr-background-4.jpg.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-container h1 {
+    color: white;
+    margin-bottom: 8rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.user-form {
+    margin-top: 5rem;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.class-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    color: red;
+}
+
+.class-input {
+    font-size: 2rem;
+}
+
+.name-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    color: red;
+}
+
+.name-input {
+    font-size: 2rem;
+}
+
+.start-button {
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 1px black;
+    outline: none;
+    transition: all ease-in-out 200ms;
+}
+
+.start-button:hover {
+    background-color: gray;
+    color: #fff;
+}
+
 
 /*  Map css  */
 
@@ -38,5 +112,30 @@ header div {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
+
+.shire {
+    position: absolute;
+    top: 22%;
+    left: 32%;
+    color: green;
+    background-color: black;
+    font-size: 2rem;
+}
+
+/* Quest CSS */
+
+#quest-section {
+    display: flex;
+}
+
+.quest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 

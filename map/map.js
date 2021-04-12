@@ -19,6 +19,7 @@ const mapDiv = document.getElementById('map');
 
 for (let quest of quests) {
     const anchorTag = document.createElement('a');
+    anchorTag.classList.add(`${quest.id}`);
 
     anchorTag.textContent = quest.title;
 

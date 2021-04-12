@@ -1,11 +1,11 @@
 const monsters = {
-    id: 'monsters',
-    title: 'A Den of Monsters',
+    id: 'shire',
+    title: 'The Shire',
     map: {
         top: '89%',
         left: '44%'
     },
-    image: 'monsters.jpeg',
+    image: 'theShire.jpg',
     description: `
         You enter the quest chamber only to be confronted by a hoard of
         monsters. And they look hungry. What do you do?

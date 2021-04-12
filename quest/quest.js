@@ -5,7 +5,13 @@ import { renderHeader } from '../render-utils.js';
 renderHeader();
 
 const params = new URLSearchParams(window.location.search);
+
 const section = document.getElementById('quest-section');
+const descriptionContainer = document.getElementById('questDescription');
+const choicesContainer = document.getElementById('choices');
+
+
+
 const questId = params.get('id');
 
 const quest = findById(quests, questId);
@@ -16,11 +22,10 @@ const image = document.createElement('img');
 const h2 = document.createElement('h2');
 
 
+
 image.src = `../assets/${quest.image}`;
 
 h2.textContent = quest.title;
-
-section.append(h2, image);
 
 const form = document.createElement('form');
 for (let choice of quest.choices) {
@@ -33,6 +38,8 @@ for (let choice of quest.choices) {
 
     label.append(choice.description, radio);
     form.append(label);
+
+    descriptionContainer.textContent = quests.description;
 }
 
 const button = document.createElement('button');
@@ -56,5 +63,5 @@ form.addEventListener('submit', (event) => {
     window.location = '../map';
 });
 
-section.append(h2, image, form);
+section.append(h2, image, form, descriptionContainer);
 
