@@ -6,7 +6,7 @@ export function renderHeader() {
     const user = getUser();
     const div = document.createElement('div');
 
-    div.textContent = `Name: ${user.name}, class: ${user.class}, HP: ${user.hp}, Gold: ${user.gold}`;
+    div.textContent = `Name: ${user.name}, Class: ${user.class}, HP: ${user.hp}, Gold: ${user.gold}`;
 
     header.append(div);
 }
