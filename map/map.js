@@ -18,15 +18,43 @@ if (userIsDead || areAllQuestsCompleted()) {
 const mapDiv = document.getElementById('map');
 
 for (let quest of quests) {
+    console.log(quest);
     const anchorTag = document.createElement('a');
-    anchorTag.classList.add(`${quest.id}`);
+    if (!user.completed['shire'] && quest.id === 'shire') {
 
-    anchorTag.textContent = quest.title;
+        anchorTag.classList.add(`${quest.id}`);
 
-    anchorTag.href = `../quest/?id=${quest.id}`;
+        anchorTag.textContent = quest.title;
+
+        anchorTag.href = `../quest/?id=${quest.id}`;
+
+        
+    }
+    if (user.completed['shire'] && quest.id === 'bree') {
+        anchorTag.classList.add(`${quest.id}`);
+
+        anchorTag.textContent = quest.title;
+
+        anchorTag.href = `../quest/?id=${quest.id}`;
+    
+    }
+    // For next quest after Bree
+    if (user.completed['bree'] && quest.id === 'bree') {
+        anchorTag.classList.add(`${quest.id}`);
+
+        anchorTag.textContent = quest.title;
+
+        anchorTag.href = `../quest/?id=${quest.id}`;
+    
+    }
 
     mapDiv.append(anchorTag);
 
+    
+
     if (quest.id === 'greenDragonInn' || quest.id === 'bagEnd' || quest.id === 'insideBagEnd' || quest.id === 'ringInBagEnd' || quest.id === 'corrupted' || quest.id === 'destroyQuest') {
         anchorTag.style.display = 'none';
-    }}
+    }
+
+
+}

@@ -13,9 +13,10 @@ const body = document.querySelector('body');
 
 const audioTag = document.createElement('audio');
 const sourceTag = document.createElement('source');
+const image = document.createElement('img');
+const h2 = document.createElement('h2');
 
 audioTag.autoplay = 'true';
-
 
 const questId = params.get('id');
 
@@ -25,9 +26,6 @@ sourceTag.src = `../assets/${quest.audio}`;
 
 audioTag.append(sourceTag);
 body.append(audioTag);
-
-const image = document.createElement('img');
-const h2 = document.createElement('h2');
 
 image.src = `../assets/${quest.image}`;
 
@@ -39,14 +37,12 @@ form.autocomplete = 'off';
 
 for (let choice of quest.choices) {
     
-
     const label = document.createElement('label');
     const radio = document.createElement('input');
 
     radio.type = 'radio';
     radio.name = 'choice';
     radio.value = choice.id;
-
 
     choicesContainer.append(choice.description, radio);
 
