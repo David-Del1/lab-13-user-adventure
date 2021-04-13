@@ -20,7 +20,7 @@ if (user.gold < 20) {
 
 let hpStatus;
 
-if (user.hp === 0) {
+if (user.hp <= 0) {
     hpStatus = 'dead';
 } else if (user.hp > 20 && user.hp < 50) {
     hpStatus = 'frail';

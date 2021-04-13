@@ -23,6 +23,7 @@ export function updateUserGivenChoice(questId, choice) {
 
     //we need to change gold
     user.gold += choice.gold;
+    user.exp += choice.exp;
 
     //we need to change quest completed
     // we don't know ahead of time which quest is completed
@@ -45,4 +46,6 @@ export function areAllQuestsCompleted() {
         }
 
     return true;
+
+    
 }

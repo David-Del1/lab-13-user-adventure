@@ -26,4 +26,7 @@ for (let quest of quests) {
     anchorTag.href = `../quest/?id=${quest.id}`;
 
     mapDiv.append(anchorTag);
-}
+
+    if (quest.id === 'greenDragonInn' || quest.id === 'bagEnd' || quest.id === 'insideBagEnd' || quest.id === 'ringInBagEnd' || quest.id === 'corrupted' || quest.id === 'destroyQuest') {
+        anchorTag.style.display = 'none';
+    }}

@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+
+
 html {
     color: white;
+    font-family: 'Bilbo', cursive;
 }
 
 body {
     height: 100vh;
     background-color: black;
+}
+
+input {
+    outline: none;
 }
 
 header {
@@ -34,6 +41,11 @@ h2 {
 
 a {
     text-decoration: none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
 }
 
 /* User page CSS */
@@ -136,7 +148,7 @@ a {
 }
 
 .map {
-    height: 80%;
+    height: 100%;
     width: 100%;
     background-image: url('../assets/5062f6182e6587ec5ac2fbb07151348a.jpg');
     background-size: cover;
@@ -152,6 +164,17 @@ a {
     color: green;
     background-color: black;
     font-size: 2rem;
+    padding: 0.4rem;
+}
+
+.bree {
+    position: absolute;
+    top: 15%;
+    left: 42%;
+    background-color: black;
+    color: brown;
+    font-size: 1.4rem;
+    padding: 0.2rem;
 }
 
 /* Quest CSS */

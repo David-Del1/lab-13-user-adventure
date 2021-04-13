@@ -1,4 +1,4 @@
-import { setUser } from "./local-storage-utils.js";
+import { setUser } from './local-storage-utils.js';
 
 const form = document.querySelector('form');
 
@@ -13,6 +13,7 @@ form.addEventListener('submit', (event) => {
     const user = {
         hp: 100,
         gold: 0,
+        exp: 0,
         name: name,
         class: userClass,
         completed: {}

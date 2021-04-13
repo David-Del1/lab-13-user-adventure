@@ -1,6 +1,6 @@
 import { findById } from '../utils.js';
 import quests from '../data.js';
-import { getUser, updateUserGivenChoice } from '../local-storage-utils.js';
+import { updateUserGivenChoice } from '../local-storage-utils.js';
 import { renderHeader } from '../render-utils.js';
 renderHeader();
 
@@ -22,8 +22,6 @@ const questId = params.get('id');
 const quest = findById(quests, questId);
 
 sourceTag.src = `../assets/${quest.audio}`;
-console.log(sourceTag);
-//console.table(quest);
 
 audioTag.append(sourceTag);
 body.append(audioTag);
@@ -31,14 +29,13 @@ body.append(audioTag);
 const image = document.createElement('img');
 const h2 = document.createElement('h2');
 
-console.log(quest.description);
-
 image.src = `../assets/${quest.image}`;
 
 h2.textContent = quest.title;
 descriptionContainer.textContent = quest.description;
 
 const form = document.createElement('form');
+form.autocomplete = 'off';
 
 for (let choice of quest.choices) {
     
@@ -69,7 +66,6 @@ form.addEventListener('submit', (event) => {
 
     const formData = new FormData(form);
     const choiceId = formData.get('choice');
-    console.log(choiceId);
 
     const choice = findById(quest.choices, choiceId);
     //console.log(choiceId);
@@ -78,9 +74,44 @@ form.addEventListener('submit', (event) => {
 
     if (choiceId === 'bagEnd') {
         window.location = `../quest/?id=bagEnd`;
-    } else {
+    } 
+    else if (choiceId === 'greenDragonInn') {
+        window.location = `../quest/?id=greenDragonInn`;
+    }
+    else if (choiceId === 'inside'){
+        window.location = `../quest/?id=insideBagEnd`;
+    }
+    else if (choiceId === 'barFight') {
+        alert('You manage to kick a few hobbits around but are soon overwhelmed by their drunken rage. They beat you up and throw you out into the mud. You lose 20 HP.');
+        window.location = `../quest/?id=shire`;
+    }
+    else if (choiceId === 'back') {
         window.location = '../map';
     }
+    else if (choiceId === 'ring') {
+        window.location = `../quest/?id=ringInBagEnd`;
+    }
+    else if (choiceId === 'putOn') {
+        window.location = `../quest/?id=corrupted`;
+    }
+    else if (choiceId === 'tryAgain') {
+        localStorage.clear();
+        window.location = `../index.html`;
+    }
+    else if (choiceId === 'tea') {
+        alert('Scrumptious! Your belly is full. You thank Bilbo and go on your way.');
+        window.location = '../map';
+    }
+    else if (choiceId === 'destroy') {
+        window.location = `../quest/?id=destroyQuest`;
+    }
+    else if (choiceId === 'go') {
+        window.location = '../map';
+    }
+    else {
+        window.location = '../map';
+    }
+
     //alert(JSON.stringify(getUser(), true, 2));
 
     //window.location = '../map';
