@@ -136,7 +136,7 @@ const insideBagEnd = {
     image: 'insideBagEnd.jpg',
     audio: 'Dreaming of Bag End.mp3',
     description: `
-        It's lovely inside Bag End. The tempurature feels just right, there's always warm food to fill our bellies and oak-barreled wine to calm our nerves. You gain 10 HP. Come back to Bag End anytime for a recharge. Where would you like to go next?
+        It's lovely inside Bag End. The tempurature feels just right, there's always warm food to fill our bellies and oak-barreled wine to calm our nerves. You gain 10 HP. Come back to Bag End anytime for a recharge. What's next?
     `,
     choices: [{
         id: 'tea',
@@ -164,7 +164,7 @@ const ringInBagEnd = {
     image: 'ring.webp',
     audio: 'Prologue One Ring to Rule Them All.mp3',
     description: `
-        You discover the Ring of Power and gain 10 XP. It's warmth glow... It's addictive lure... It calls to you.... It's hypnotizing. It's... it's so precious... Will you resist? 
+        You discover the Ring of Power and gain 10 XP. It's warm glow... It's addictive lure... It calls to you.... It's hypnotizing. It's... it's so precious... Will you resist? 
     `,
     choices: [{
         id: 'putOn',
@@ -225,54 +225,35 @@ const corrupted = {
 const bree = {
     id: 'bree',
     title: 'Bree',
-    image: 'dragon.jpg',
-    audio: 'dragon.wav',
+    image: 'bree.webp',
+    audio: 'rain.mp3',
     description: `
-        You run to a nearby village you have heard is being
-        terrorized by a dragon. Sure enough as you rent a room
-        in a local inn, you go outside and see the dragon about
-        to lay seige! What do you do?
+        You've made it to the village of Bree. Quick, get out of this storm and find a place to sleep for the night.
     `,
     choices: [{
-        id: 'run',
-        description: 'Get the hell out of the village',
-        hp: -35,
-        gold: 15
+        id: 'prancingPony',
+        description: 'Head for the Prancing Pony Inn',
+        hp: 0,
+        gold: 0,
+        exp: 10
     }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
-        result: `
-            You attempt to charge towards the dragon, who sees you approach
-            and let's loose a fireball. You wake up the next morning and the
-            village has been completely burned to the ground.
-            Oh, and you take 45 hp damage.
-        `,
-        hp: -45,
-        gold: 0
+        id: 'shiver',
+        description: 'Stay out in the rain',
+        hp: -50,
+        gold: 0,
+        exp: 0
     }, {
         id: 'back',
-        description: 'Emulate that guy from LOR who shot an arrow',
-        result: `
-            Inspired by the legend of Bard the Bowman, you notice a
-            stunned archer standing nearby and take their bow and quiver,
-            climb to the top of a tall tower and take aim. On the dragon's
-            next pass you steady your aim and let one fly. Amazingly,
-            you strike the dragon in the eye, piercing into the brain and
-            killing the dragon instantly. The villagers declare you their hero
-            and award you 90 gold.
-        `,
+        description: 'Back to the map!',
         hp: 0,
-        gold: 90
+        gold: 0,
+        exp: 0
     }]
 };
 
 const treasure = {
     id: 'treasure',
     title: 'A Golden Treasure',
-    map: {
-        top: '31%',
-        left: '5%'
-    },
     prerequisites: ['dragon', 'monsters'],
     image: 'treasure-chests.png',
     audio: 'treasure-chests.wav',
