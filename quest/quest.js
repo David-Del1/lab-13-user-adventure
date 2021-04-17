@@ -104,6 +104,30 @@ form.addEventListener('submit', (event) => {
     else if (choiceId === 'go') {
         window.location = '../map';
     }
+    else if (choiceId === 'wander') {
+        window.location = `../quest/?id=wander`;
+    }
+    else if (choiceId === 'prancingPony') {
+        window.location = `../quest/?id=prancingPony`;
+    }
+    else if (choiceId === 'confront') {
+        window.location = `../quest/?id=confrontStrider`;
+    }
+    else if (choiceId === 'rest') {
+        window.location = `../quest/?id=rest`;
+    }
+    else if (choiceId === 'run') {
+        window.location = `../quest/?id=safe`;
+    }
+    else if (choiceId === 'continue') {
+        window.location = `../quest/?id=rivendell`;
+    }
+    else if (choiceId === 'fellowship') {
+        window.location = `../quest/?id=fellowship`;
+    }
+    else if (choiceId === 'done') {
+        window.location = `../results`;
+    }
     else {
         window.location = '../map';
     }

@@ -56,16 +56,10 @@ const bagEnd = {
         gold: 0,
         exp: 0,
     }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
-        result: `
-            You attempt to charge towards the dragon, who sees you approach
-            and let's loose a fireball. You wake up the next morning and the
-            village has been completely burned to the ground.
-            Oh, and you take 45 hp damage.
-        `,
-        hp: -45,
-        gold: 0
+        id: 'wander',
+        description: 'Wander off into the wilderness',
+        hp: -200,
+        exp: 0
     }, {
         id: 'back',
         description: 'Back to the map!',
@@ -82,6 +76,7 @@ const bagEnd = {
         gold: 90
     }]
 };
+
 const dragonInn = {
     id: 'greenDragonInn',
     title: 'The Green Dragon Inn',
@@ -116,17 +111,24 @@ const dragonInn = {
     }, {
         id: 'back',
         description: 'Back to the map!',
-        result: `
-            Inspired by the legend of Bard the Bowman, you notice a
-            stunned archer standing nearby and take their bow and quiver,
-            climb to the top of a tall tower and take aim. On the dragon's
-            next pass you steady your aim and let one fly. Amazingly,
-            you strike the dragon in the eye, piercing into the brain and
-            killing the dragon instantly. The villagers declare you their hero
-            and award you 90 gold.
-        `,
         hp: 0,
-        gold: 90
+        exp:0
+    }]
+};
+const wander = {
+    id: 'wander',
+    title: 'A Troll has eaten you...',
+    image: 'bilbo-and-the-trolls.gif',
+    audio: 'Player Death Scream Sound Effect Third Variation.mp3',
+    description: `
+        You've wandered into a pack of hungry trolls. They smell like old fish and toe jam. They have you for lunch. You have died.
+    `,
+    choices: [{
+        id: 'tryAgain',
+        description: 'Try Again',
+        hp: 0,
+        gold: 0,
+        exp: 0
     }]
 };
 
@@ -250,39 +252,157 @@ const bree = {
         exp: 0
     }]
 };
-
-const treasure = {
-    id: 'treasure',
-    title: 'A Golden Treasure',
-    prerequisites: ['dragon', 'monsters'],
-    image: 'treasure-chests.png',
-    audio: 'treasure-chests.wav',
-    action: 'chest-opening.wav',
+const prancingPony = {
+    id: 'prancingPony',
+    title: 'Who is that man?',
+    image: 'strider.gif',
+    audio: 'Strider.mp3',
     description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
+        Here in the Prancing Pony, you get the chance to dry off and grab a bite to eat. However, there's a man that's been staring at you from afar. You ask a worker whether they know who the man is, but they say they do not know. They mention that he stays around the area and that there's an aura of mystery that surrounds him. The locals call him Strider. Who is he and what does he want?
     `,
     choices: [{
-        id: 'wooden',
-        description: 'A Wooden Chest',
-        result: 'You grab 40 gold pieces!',
+        id: 'confront',
+        description: 'Confront him',
         hp: 0,
-        gold: 40
+        gold: 0,
+        exp: 10
     }, {
-        id: 'golden',
-        description: 'A Golden Chest',
-        result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
-        hp: -50,
-        gold: 0
+        id: 'shiver',
+        description: 'Flip him the bird',
+        hp: 0,
+        gold: 0,
+        exp: 0
     }, {
-        id: 'jeweled',
-        description: 'A Jeweled Chest',
-        result: 'A warm light engulfs you and you gain 35 hp',
-        hp: 35,
-        gold: 0
+        id: 'back',
+        description: 'Back to the map!',
+        hp: 0,
+        gold: 0,
+        exp: 0
+    },
+    ]
+};
+const confront = {
+    id: 'confrontStrider',
+    title: 'Strider wants to help you!',
+    image: 'aragorn.jpg',
+    audio: 'The Nazgûl.mp3',
+    description: `
+        Without warning, the man rushes you into a room. He tells you that dark, powerful beings hunt you and that you are not safe. The man says he knows what you have in your possession. He reveals himself as Aragon, and he wishes to help you in your mission to destroy the Ring of Power. "We must head for Rivendell at first light.", says Aragon. 
+    `,
+    choices: [{
+        id: 'go',
+        description: 'Let\'s go!',
+        hp: 0,
+        gold: 0,
+        exp: 0
+    },
+    ]
+};
+
+const weatherTop = {
+    id: 'weatherTop',
+    title: 'Weathertop',
+    prerequisites: ['dragon', 'monsters'],
+    image: 'weathertop.jpg',
+    audio: 'The Doors of Durin.mp3',
+    description: `
+        With the company of Aragon, you come across Weathertop, an abandoned watch-tower and military outpost overlooking the Great East Road since the days of the reign of Elendil the Dunedain. Both of you decide it would be best to lay low here for the night and continue your travels in the morning. 
+    `,
+    choices: [{
+        id: 'rest',
+        description: 'Try to get some rest',
+        hp: 0,
+        gold: 0,
+        exp: 0
+    }, {
+        id: 'wander',
+        description: 'Wander off into the wilderness',
+        hp: -150,
+        gold: 0,
+        exp: 0
+    }, {
+        id: 'back',
+        description: 'Back to the map!',
+        hp: 0,
+        gold: 0, 
+        exp: 0
+    }]
+};
+const rest = {
+    id: 'rest',
+    title: 'The Nazgul found you!',
+    image: 'naz.gif',
+    audio: 'Orthanc.mp3',
+    description: `
+       Oh No! The Nazgul have located their prized possession: The Ring of Power! They will stop at nothing to obtain it. Run away!
+    `,
+    choices: [{
+        id: 'run',
+        description: 'Run away!',
+        hp: 0,
+        gold: 0,
+        exp: 0
+    }, {
+        id: 'fight',
+        description: 'Stand and fight!',
+        hp: -150,
+        gold: 0,
+        exp: 0
+    }]
+};
+
+const runAway = {
+    id: 'safe',
+    title: 'You are safe... for now.',
+    image: 'safe.jpg',
+    audio: 'The Passing of the Elves.mp3',
+    description: `
+       The brave Aragon fended off those evil Nazgul to give you just enough time to escape. You haven't seen Aragon since. You see Rivendell in the distance. What will you do?
+    `,
+    choices: [{
+        id: 'continue',
+        description: 'Let\'s keep going',
+        hp: 0,
+        gold: 0,
+        exp: 10
+    }, {
+        id: 'despair',
+        description: 'Collapse in despair',
+        hp: -150,
+        gold: 0,
+        exp: 0
+    }]
+};
+
+const rivendell = {
+    id: 'rivendell',
+    title: 'You made it to Rivendell!',
+    image: 'rivendell.jpg',
+    audio: 'Rivendell.mp3',
+    description: `
+       You have made it to the Elven town of Rivendell! You gain 10 XP. Here, you will unite with others who share in the belief of your mission. They will help you in any way they can so that you can succeed in your quest. 
+    `,
+    choices: [{
+        id: 'fellowship',
+        description: 'Let\'s do it!',
+        hp: 0,
+        gold: 0,
+        exp: 10
+    }]
+};
+const fellowship = {
+    id: 'fellowship',
+    title: 'The Fellowship of the Ring has been founded!',
+    image: 'fellowship.jpg',
+    audio: 'The Road Goes Ever On... , Pt. 1.mp3',
+    description: `
+       Elrond, lord of Rivendell, has established the The Fellowship of the Ring-- a group of brave ones that are tasked to destroy the Ring of Power by throwing it into the fires of Mount Doom. And... is that Aragon? It is! He made it out alive from the encounter with the Nazgul and he is here in Rivendell showing his devotion to your cause. There's also Gandlaf the Gray, The archer Elf Legolas, the brave dwarf Gimli, Boromir, Mary, Pippin and Samwise Gamgee! The fate of the ring  will determine the fate of Middle Earth and all those who inhabit it.
+    `,
+    choices: [{
+        id: 'done',
+        description: 'I am ready.',
+        hp: 0,
+        exp: 10
     }]
 };
 
@@ -291,11 +411,18 @@ const quests = [
     bagEnd,
     dragonInn,
     insideBagEnd,
+    wander,
     ringInBagEnd, 
     corrupted,
     destroyQuest,
-    treasure,
+    weatherTop,
     bree,
+    prancingPony,
+    confront,
+    rest,
+    runAway,
+    rivendell,
+    fellowship,
 ];
 
 export default quests;

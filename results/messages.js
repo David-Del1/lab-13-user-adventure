@@ -1,17 +1,17 @@
-export const aliveGoldMessages = {
-    poor: 'you live as a poor beggar',
-    modest: 'you live in a modest hut farming the earth',
-    rich: 'you and your whole family live in small castle in luxury',
+export const aliveEXPMessages = {
+    poor: 'You live without recognition',
+    modest: 'you live with the recognition of your family and friends',
+    rich: 'All of Middle Earth knows of your honorable deeds. You will be rememberd for many generations to come',
 };
 
-export const deadGoldMessages = {
-    poor: 'you leave nothing for your family',
-    modest: 'you leave enough to buy your family a turkey dinner at the pub',
-    rich: 'your family builds a monument in your honor'
+export const deadEXPMessages = {
+    poor: 'You die in embarrassment',
+    modest: 'You gave it a good shot',
+    rich: 'You died honorably'
 };
 
 export const hpMessages = {
-    dead: 'you are dead',
-    frail: 'you retire in frail health',
-    healthy: 'you retire and live a long life in good health',
+    dead: 'You are dead',
+    frail: 'the mission took it\'s toll on you',
+    healthy: 'Despite the dangers, you triumphed over the evils that dared to step in your way. ',
 };

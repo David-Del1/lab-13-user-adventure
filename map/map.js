@@ -39,7 +39,7 @@ for (let quest of quests) {
     
     }
     // For next quest after Bree
-    if (user.completed['bree'] && quest.id === 'bree') {
+    if (user.completed['bree'] && quest.id === 'weatherTop') {
         anchorTag.classList.add(`${quest.id}`);
 
         anchorTag.textContent = quest.title;

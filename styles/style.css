@@ -169,12 +169,20 @@ button {
 
 .bree {
     position: absolute;
-    top: 15%;
-    left: 42%;
+    top: 20%;
+    left: 40%;
     background-color: black;
     color: brown;
     font-size: 1.4rem;
     padding: 0.2rem;
+}
+
+.weatherTop {
+    position: absolute;
+    top: 22%;
+    left: 44%;
+    color: gray;
+    background-color: black;
 }
 
 /* Quest CSS */
@@ -214,5 +222,20 @@ button {
     border-radius: 10px;
 }
 
+
+/* Results CSS */
+
+.results-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-text {
+    width: 50%;
+    font-size: 3rem;
+}
 
 
